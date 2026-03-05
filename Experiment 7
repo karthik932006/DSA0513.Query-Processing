@@ -1,0 +1,14 @@
+import pandas as pd
+
+data = {
+    'Item': ['Pen','Pen','Pencil','Pencil','Book','Book'],
+    'Region': ['East','West','East','West','East','West'],
+    'Sales': [200,150,300,250,500,450]
+}
+
+df = pd.DataFrame(data)
+
+pivot = pd.pivot_table(df, values='Sales', index='Item', aggfunc='max')
+
+print("Pivot Table:")
+print(pivot)
