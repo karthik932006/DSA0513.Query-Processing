@@ -1,0 +1,17 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from pandas_datareader import data as web
+import datetime
+
+stock = "GOOGL"
+
+start = datetime.datetime(2023, 1, 1)
+end = datetime.datetime(2023, 3, 1)
+
+df = web.DataReader(stock, 'yahoo', start, end)
+
+plt.scatter(df.index, df['Volume'])
+plt.title("Scatter Plot of Trading Volume")
+plt.xlabel("Date")
+plt.ylabel("Volume")
+plt.show()
