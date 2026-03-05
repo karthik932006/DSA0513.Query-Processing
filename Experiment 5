@@ -1,0 +1,18 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from pandas_datareader import data as web
+import datetime
+
+# Stock symbol
+stock = "GOOGL"
+
+start = datetime.datetime(2023, 1, 1)
+end = datetime.datetime(2023, 3, 1)
+
+df = web.DataReader(stock, 'yahoo', start, end)
+
+# Bar plot
+df['Volume'].plot(kind='bar', title="Trading Volume of Alphabet Inc")
+plt.xlabel("Date")
+plt.ylabel("Volume")
+plt.show()
