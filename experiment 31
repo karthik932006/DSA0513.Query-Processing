@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+
+x = [1,2,3,4,5]
+
+y1 = [1,4,9,16,25]
+y2 = [1,8,27,64,125]
+
+plt.plot(x,y1,label="Square",color='blue')
+plt.plot(x,y2,label="Cube",color='red')
+
+plt.legend()
+plt.title("Multi Line Plot")
+
+plt.show()
