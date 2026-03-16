@@ -1,0 +1,12 @@
+import pandas as pd
+
+sales_data = pd.read_csv("sales_data.csv")
+
+pivot = pd.pivot_table(
+    sales_data,
+    values='SaleAmount',
+    index='Item',
+    aggfunc=['max','min']
+)
+
+print(pivot)
