@@ -1,0 +1,14 @@
+import pandas as pd
+
+data = {
+'SchoolCode':['S001','S002','S001','S002'],
+'Class':['V','VI','V','VI'],
+'Name':['John','Alice','Bob','Tom'],
+'Age':[12,13,11,14]
+}
+
+df = pd.DataFrame(data)
+
+group = df.groupby(['SchoolCode','Class'])
+
+print(group)
