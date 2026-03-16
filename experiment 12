@@ -1,0 +1,18 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("alphabet_stock_data.csv")
+df['Date'] = pd.to_datetime(df['Date'])
+
+start = '2023-01-01'
+end = '2023-01-31'
+
+filtered = df[(df['Date'] >= start) & (df['Date'] <= end)]
+
+# Scatter plot
+plt.scatter(filtered['Volume'], filtered['Close'])
+
+plt.title("Trading Volume vs Closing Price")
+plt.xlabel("Volume")
+plt.ylabel("Closing Price")
+plt.show()
