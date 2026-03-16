@@ -1,0 +1,18 @@
+import pandas as pd
+import numpy as np
+
+# Create dataframe
+df = pd.DataFrame(np.random.randn(10,4),
+                  columns=['A','B','C','D'])
+
+# Function to color values
+def highlight(val):
+    if val < 0:
+        return 'color: red'
+    else:
+        return 'color: black'
+
+styled = df.style.applymap(highlight)
+
+print(df)
+styled
