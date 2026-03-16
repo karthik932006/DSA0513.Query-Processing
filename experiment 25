@@ -1,0 +1,9 @@
+import pandas as pd
+
+df = pd.read_csv("world_alcohol.csv")
+
+# Shape
+print(df.shape)
+
+# Column names
+print(df.columns)
