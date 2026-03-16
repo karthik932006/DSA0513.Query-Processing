@@ -1,0 +1,17 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("alphabet_stock_data.csv")
+
+df['Date'] = pd.to_datetime(df['Date'])
+
+# Filter October 2016
+oct_data = df[(df['Date'] >= '2016-10-01') & (df['Date'] <= '2016-10-31')]
+
+plt.plot(oct_data['Date'], oct_data['Close'])
+
+plt.title("Alphabet Stock Trend - Oct 2016")
+plt.xlabel("Date")
+plt.ylabel("Closing Price")
+
+plt.show()
